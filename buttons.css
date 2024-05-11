@@ -1,0 +1,53 @@
+button, form input[type="submit"], form input[type="text"], form input[type="date"], form input[type="number"] {
+    background-color: #D3D9D4; 
+    border: 1px solid #D3D9D4;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 20px;
+}
+
+button, form input[type="submit"] {
+    cursor: pointer; 
+}
+
+form input[type="submit"]:hover, button:hover {
+    /* background-image: url(blue_pink_dark_dark.jpg);
+    background-size: cover;
+    background-position: center; */
+    background-color: transparent;
+    border: 1px solid #D3D9D4;
+    color: white;
+}
+
+button, form input[type="submit"] {
+    margin: 0 3px;
+}
+
+button.back {
+    background-image: url(back.png);
+}
+
+button.back:hover {
+    background-image: url(back2.png);
+    background-color: transparent;
+}
+
+button.home {
+    background-image: url(home.png);
+    border: 1px solid #D3D9D4;
+}
+
+button.home:hover {
+    background-image: url(home2.png);
+    background-color: transparent;
+}
+
+.bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-top: 20px;
+}
