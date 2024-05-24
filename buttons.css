@@ -1,4 +1,4 @@
-button, form input[type="submit"], form input[type="text"], form input[type="date"], form input[type="number"] {
+button, form input[type="submit"], form input[type="text"], form input[type="date"], form input[type="number"], form select {
     background-color: #D3D9D4; 
     border: 1px solid #D3D9D4;
     padding: 10px 20px;
@@ -7,6 +7,17 @@ button, form input[type="submit"], form input[type="text"], form input[type="dat
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 20px;
+}
+
+form select {
+    width: 210px;
+    height: auto;
+    size: 3;
+    overflow-y: auto;
+}
+
+form input[type="date"] {
+    width: 170px;
 }
 
 button, form input[type="submit"] {
@@ -20,6 +31,7 @@ form input[type="submit"]:hover, button:hover {
     background-color: transparent;
     border: 1px solid #D3D9D4;
     color: white;
+    transition: background 0.2s ease;
 }
 
 button, form input[type="submit"] {

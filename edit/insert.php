@@ -13,13 +13,21 @@
         text-align: center;
     }
 
-    form input[type="date"] {
+    /* form input[type="date"] {
         width: 170px;
-    }
+    } */
 
     .new {
         color: beige;
         font-style: italic;
+    }
+
+    select {
+        cursor: pointer;
+    }
+    
+    option:checked {
+      background-color: darkgray;
     }
 </style>
 <body>
@@ -31,8 +39,14 @@
                 <input type="number" name="facultyNumber" placeholder="Пр: 22621709" id="facultyNumber">
                 <p class="white">Дисциплина </p>
                 <input type="text" name="course" placeholder="Пр: ООП1">
-                <p class="white">Преподавател № </p>
-                <input type="number" name="lecturer_id" placeholder="Пр: 23">
+                <p class="white">Преподавател </p>
+                <select name="lecturer_id">
+                    <option id="choice" value="">Избери</option>
+                    <?php
+                        options();
+                    ?>
+                </select><br>
+                <!-- <input type="number" name="lecturer_id" placeholder="Пр: 23"> -->
                 <p class="white">Оценка </p>
                 <input type="number" name="grade" placeholder="Пр: 3"><br> 
                 <!-- optional  -->
@@ -49,6 +63,24 @@
 </body>
 </html>
 <?php
+
+    function options() {
+        include("../connection/config.php");
+
+        $sql = "SELECT l.id id, l.name `name`, t.name title 
+                FROM lecturer l
+                JOIN title_info t ON t.id = l.title_id";
+
+        $result = mysqli_query($conn, $sql);
+
+        if(mysqli_num_rows($result) > 0) {
+            while($row = mysqli_fetch_assoc($result)) {
+                echo "<option value='" .$row["id"]."'>". $row["title"]. " ".$row["name"]."</option>";
+            };
+        }
+        
+        mysqli_close($conn);
+    }
 
     // taka i ne gi polzvah :(
 
