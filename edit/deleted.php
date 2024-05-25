@@ -16,8 +16,8 @@
     }
 
     .paper {
-        /* background-color: #D3D9D4; */
-        background-image: url("../paper.jpg");
+        background-color: #D3D9D4;
+        /* background-image: url("../paper.jpg"); */
         margin: 50px;
         padding: 20px;
         border-radius: 20px;
@@ -79,8 +79,16 @@
                     $result = mysqli_query($conn, $sql);
                     $row = mysqli_fetch_assoc($result);
 
+                    $sql2 = "SELECT c.name course_name
+                        FROM  course c
+                        WHERE c.id = '$course'";
+
+                    $result2 = mysqli_query($conn, $sql2);
+                    $row2 = mysqli_fetch_assoc($result2);
+
                     echo "<p class=white id=idk>Оценката по <br>";
-                    echo $course . "<br>беше изтрита.</p>";
+                    // echo $course . "<br>беше изтрита.</p>";
+                    echo $row2["course_name"] . "<br>беше изтрита.</p>";
                 } 
                 else {
                     echo "<div class='container'>";

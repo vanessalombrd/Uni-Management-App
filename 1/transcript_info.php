@@ -22,16 +22,16 @@
     }
 
     .info1, .info2 {
-        /* background-color: #D3D9D4; */
-        background-image: url("../paper.jpg");
+        background-color: #D3D9D4;
+        /* background-image: url("../paper.jpg"); */
         margin-top: 10px;
         padding: 20px;
         border-radius: 20px;
     }
 
     .transcript {
-        /* background-color: #D3D9D4; */
-        background-image: url("../paper.jpg");
+        background-color: #D3D9D4;
+        /* background-image: url("../paper.jpg"); */
         margin: 50px;
         padding: 20px;
         border-radius: 20px;

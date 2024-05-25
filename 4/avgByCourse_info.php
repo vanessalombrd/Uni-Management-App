@@ -17,8 +17,8 @@
     }
 
     .info {
-        /* background-color: #D3D9D4; */
-        background-image: url("../paper.jpg");
+        background-color: #D3D9D4;
+        /* background-image: url("../paper.jpg"); */
         margin: 10%;
         padding: 20px;
         border-radius: 20px;
