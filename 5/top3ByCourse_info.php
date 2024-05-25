@@ -56,7 +56,7 @@
             JOIN grade g ON s.id = g.student_id
             WHERE g.course_id = '$course'
             GROUP BY s.id
-            ORDER BY average DESC
+            ORDER BY average DESC, `name` DESC 
             LIMIT 3;";
 
             $result = mysqli_query($conn, $sql);
