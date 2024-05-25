@@ -19,7 +19,7 @@
                 JOIN course c ON c.id = g.course_id
                 JOIN grade_info gi ON gi.id = g.id
                 WHERE student_id = '$facultyNumber'
-                ORDER BY c.semester";
+                ORDER BY g.date";
 
     $result = mysqli_query($conn, $sql);
 
