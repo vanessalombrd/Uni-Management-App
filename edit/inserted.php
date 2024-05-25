@@ -55,15 +55,11 @@
             $lecturer = $_POST["lecturer_id"];
             $grade = $_POST["grade"];
 
-            $date = (!empty($_POST["date"])) ? $_POST["date"] : null;
+            // ako ne e vuvedena data da se vzeme datata v denq na vuvejdane
+            $date = (!empty($_POST["date"])) ? $_POST["date"] : date('Y-m-d');
 
-            if ($date == null) {
-                $sql = "INSERT INTO `grade`(`id`, `student_id`, `course_id`, `lecturer_id`) 
-            VALUES ($grade,'$facultyNumber','$course', $lecturer)";
-            } else {
-                $sql = "INSERT INTO `grade`(`id`, `student_id`, `course_id`, `lecturer_id`, `date`) 
+            $sql = "INSERT INTO `grade`(`id`, `student_id`, `course_id`, `lecturer_id`, `date`) 
             VALUES ($grade,'$facultyNumber','$course', $lecturer, '$date')";
-            }
 
             try {
                 $result = mysqli_query($conn, $sql);
